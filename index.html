@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/StyleSheets/style.css">
+    <script src="/Lybs/jquery-3.7.0.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script defer src="main.js"></script>
+    <script defer src="search.js"></script>
+    <title>Projec2 bitcoin14.5</title>
+</head>
+
+<body>
+    <div class="mainClass">
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a id="homeLink" class="nav-link active" data-section="homeSection">Home</a>
+            </li>
+            <li class="nav-item">
+                <a id="reportsLink" class="nav-link" data-section="reportsSection">Live Reports</a>
+            </li>
+            <li class="nav-item">
+                <a id="aboutLink" class="nav-link" data-section="aboutSection">About</a>
+            </li>
+            <li><input type="text" id="filterInput" placeholder="Enter coin name...">
+                <button onclick="filterByName()" class="btn btn-primary">Search</button>
+                <button onclick="showAll()" class="btn btn-secondary">Clear Search</button>
+
+                <ul id="resultList"></ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- <section id="homeSection">
+        <h2>Currencies</h2>
+        <div id="coinsContainer">
+
+        </div>
+    </section>
+
+    <section id="reportsSection">
+        <h2>Reports</h2>
+    </section>
+
+    <section id="aboutSection">
+        <h2>About</h2>
+    </section> -->
+    <div class="parallax"> </div>
+
+    <div id="coinsContainer">test</div>
+    <div id="spinner">
+        <div id="progress"></div>
+    </div>
+
+    <div class="parallax1"></div>
+
+
+
+    <footer id="resultList">test </footer>
+
+
+
+
+</body>
+
+</html>
