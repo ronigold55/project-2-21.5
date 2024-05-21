@@ -19,57 +19,35 @@
 </head>
 
 <body>
-
     <h1>Chriptonite</h1>
+    
     <div class="mainClass">
 
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a href="/index.html" id="homeLink" class="nav-link " data-section="homeSection" style="cursor: pointer;">Home</a>
+                <a href="/index.html" id="homeLink" class="nav-link " data-section="homeSection"
+                    style="cursor: pointer;">Home</a>
             </li>
             <li class="nav-item">
-                <a href="/liveReport.html" id="reportsLink" class="nav-link " data-section="reportsSection" style="cursor: pointer;">Live Reports</a>
+                <a href="/liveReport.html" id="reportsLink" class="nav-link" data-section="reportsSection"
+                    style="cursor: pointer;">Live Reports</a>
             </li>
             <li class="nav-item">
-                <a href="/about.html" id="aboutLink" class="nav-link " data-section="aboutSection" style="cursor: pointer;">About</a>
+                <a href="/about.html" id="aboutLink" class="nav-link" data-section="aboutSection"
+                    style="cursor: pointer;">About</a>
             </li>
             <li><input type="text" id="filterInput" placeholder="Enter coin name...">
                 <button onclick="filterByName()" class="btn btn-primary">Search</button>
                 <button onclick="showAll()" class="btn btn-secondary">Clear Search</button>
 
                 <ul id="resultList"></ul>
+
+
+                <div><span class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                            onclick="favorite()">
+                        <label class="form-check-label" for="flexSwitchCheckDefault"></label></span></div>
             </li>
         </ul>
     </div>
-
-    <!-- <section id="homeSection">
-        <h2>Currencies</h2>
-        <div id="coinsContainer">
-
-        </div>
-    </section>
-
-    <section id="reportsSection">
-        <h2>Reports</h2>
-    </section>
-
-    <section id="aboutSection">
-        <h2>About</h2>
-    </section> -->
-    <div class="parallax"> </div>
-
-    <div id="coinsContainer"></div>
-    
-
-    <div class="parallax1"></div>
-
-
-
-    <footer id="resultList"> © Bitcoin Project 2024 By YG SKY PRODUCT license </footer>
-
-
-
-
 </body>
-
-</html>

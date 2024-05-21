@@ -3,10 +3,32 @@ html {
     height: 100%;
 }
 
+
+h1{
+    text-align:center;
+    background-color: grey;
+    font-size: xx-large;
+    color: black;
+    font: bold;
+    cursor: pointer;
+    
+}
+
+h1 :hover {
+
+    background-color: blue;
+    color: white;
+}
 div.mainClass {
     width: 100%;
     height: 10%;
 
+}
+
+div.image{
+    width: 150px;
+    height: 150px;
+    position: relative;
 }
 
 .parallax {
@@ -14,7 +36,7 @@ div.mainClass {
     /* The image used */
     background-image: url('https://www.reuters.com/resizer/v2/6VGEHL2CHFPK3LP7MH3J6KRS4Y.jpg?auth=a88b2e35a30bf3d993ca1c25e6ea2e87c69f75ef81dbf30e302754e6203ab6c8&width=640&quality=80');
     width: 100%;
-    height: 20%;
+    height: 40%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -22,12 +44,13 @@ div.mainClass {
     background-repeat: repeat;
     background-size: cover;
 }
+
 .parallax1 {
     /* margin-top: 10px; */
     /* The image used */
     background-image: url('https://www.reuters.com/resizer/v2/6VGEHL2CHFPK3LP7MH3J6KRS4Y.jpg?auth=a88b2e35a30bf3d993ca1c25e6ea2e87c69f75ef81dbf30e302754e6203ab6c8&width=640&quality=80');
     width: 100%;
-    height:30%;
+    height: 30%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -46,18 +69,16 @@ div.mainClass {
     justify-content: center;
     height: auto;
     width: 100%;
-    background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif) ;
+    background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif);
     border: 2px black solid;
-    
+
 }
 
-div.card{
+div.card {
     width: 20%;
     margin: 20px;
     background-image: url(/asset/bitcoin-img.svg);
-    
     opacity: 90%;
-
 
 }
 
@@ -70,9 +91,53 @@ div.card{
     text-align: center;
 }
 
-footer{
+footer {
     height: 10%;
-    background-color: blue;
+    background-color: goldenrod;
     margin-bottom: 10px;
     text-align: center;
+}
+
+#homeLink :hover {
+    background-color: blue;
+    color: white;
+}
+
+#reportsLink:hover {
+    background-color: blue;
+    color: white;
+}
+
+#aboutLink :hover {
+    background-color: blue;
+    color: white;
+}
+span{
+    margin-left: 80%;
+    direction: rtl;
+    text-align: right;
+    height: 30px;
+}
+
+.container {
+    padding: 5px;
+    display: flex;
+    /* margin: 10px; */
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    height: auto;
+    width: 100%;
+    background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif);
+    border: 2px black solid;
+    text-align: center;
+
+}
+div.aboutProfil{
+    margin: 10px;
+    text-align: center;
+    width: 50%;
+    height: 30%;
+    flex-wrap: wrap;
+
 }
