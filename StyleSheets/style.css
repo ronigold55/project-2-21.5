@@ -1,31 +1,33 @@
 body,
 html {
     height: 100%;
+    background-color: aqua;
 }
 
 
-h1{
-    text-align:center;
+h1 {
+    text-align: center;
     background-color: grey;
     font-size: xx-large;
     color: black;
     font: bold;
     cursor: pointer;
-    
+
 }
 
-h1 :hover {
+h1:hover {
 
     background-color: blue;
     color: white;
 }
+
 div.mainClass {
     width: 100%;
     height: 10%;
 
 }
 
-div.image{
+div.image {
     width: 150px;
     height: 150px;
     position: relative;
@@ -36,7 +38,7 @@ div.image{
     /* The image used */
     background-image: url('https://www.reuters.com/resizer/v2/6VGEHL2CHFPK3LP7MH3J6KRS4Y.jpg?auth=a88b2e35a30bf3d993ca1c25e6ea2e87c69f75ef81dbf30e302754e6203ab6c8&width=640&quality=80');
     width: 100%;
-    height: 40%;
+    height: 30%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -70,7 +72,7 @@ div.image{
     height: auto;
     width: 100%;
     background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif);
-    border: 2px black solid;
+    /* border: 5px black solid; */
 
 }
 
@@ -94,11 +96,11 @@ div.card {
 footer {
     height: 10%;
     background-color: goldenrod;
-    margin-bottom: 10px;
+    margin-bottom: 1%;
     text-align: center;
 }
 
-#homeLink :hover {
+#homeLink:hover {
     background-color: blue;
     color: white;
 }
@@ -108,11 +110,17 @@ footer {
     color: white;
 }
 
-#aboutLink :hover {
+#Top100:hover {
     background-color: blue;
     color: white;
 }
-span{
+#aboutLink:hover {
+    background-color: blue;
+    color: white;
+}
+
+
+span {
     margin-left: 80%;
     direction: rtl;
     text-align: right;
@@ -120,24 +128,54 @@ span{
 }
 
 .container {
+    margin-top: 1%;
     padding: 5px;
     display: flex;
-    /* margin: 10px; */
-    justify-content: center;
+    justify-content: left;
     flex-direction: row;
-    flex-wrap: wrap;    
-    height: auto;
+    flex-wrap: wrap;
+    height: 70%;
     width: 100%;
-    background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif);
-    border: 2px black solid;
-    text-align: center;
+    /* background-image: url(/asset/6VGEHL2CHFPK3LP7MH3J6KRS4Y.avif); */
+    /* border: 10px blue solid; */
+    text-align: left;
 
 }
-div.aboutProfil{
+
+div.aboutProfil {
     margin: 10px;
     text-align: center;
     width: 50%;
     height: 30%;
     flex-wrap: wrap;
 
+}
+
+/* rajout */
+
+table {
+    margin: auto;
+    border: black solid 2px;
+    text-align: center;
+}
+
+/* Style the table headers */
+th {
+    background-color: #007bff;
+    /* Blue color */
+    color: white;
+    padding: 10px;
+    border: solid black 2px;
+}
+
+/* Style the table cells */
+td {
+    padding: 10px;
+    border: solid black 2px;
+}
+
+/* Apply alternate row colors */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Light gray */
 }

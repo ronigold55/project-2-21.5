@@ -25,17 +25,25 @@
 
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a href="/index.html" id="homeLink" class="nav-link " data-section="homeSection" style="cursor: pointer;">Home</a>
+                <a href="/index.html" id="homeLink" class="nav-link " data-section="homeSection"
+                    style="cursor: pointer;">Home</a>
             </li>
             <li class="nav-item">
-                <a href="/liveReport.html" id="reportsLink" class="nav-link " data-section="reportsSection" style="cursor: pointer;">Live Reports</a>
+                <a href="/liveReport.html" id="reportsLink" class="nav-link " data-section="reportsSection"
+                    style="cursor: pointer;">Live Reports</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/top100.html" id="Top100" class="nav-link " data-section="reportsSection"
+                    style="cursor: pointer;">Top100</a>
             </li>
             <li class="nav-item">
-                <a href="/about.html" id="aboutLink" class="nav-link " data-section="aboutSection" style="cursor: pointer;">About</a>
+                <a href="/about.html" id="aboutLink" class="nav-link " data-section="aboutSection"
+                    style="cursor: pointer;">About</a>
             </li>
             <li><input type="text" id="filterInput" placeholder="Enter coin name...">
-                <button onclick="filterByName()" class="btn btn-primary">Search</button>
-                <button onclick="showAll()" class="btn btn-secondary">Clear Search</button>
+                <button onclick="filterByName()" class="btn btn-success">Search</button>
+                <!-- <button onclick="showAll()" class="btn btn-secondary">Clear Search</button> -->
 
                 <ul id="resultList"></ul>
             </li>
@@ -59,7 +67,7 @@
     <div class="parallax"> </div>
 
     <div id="coinsContainer"></div>
-    
+
 
     <div class="parallax1"></div>
 

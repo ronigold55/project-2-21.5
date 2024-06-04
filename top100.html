@@ -18,7 +18,7 @@
     <title>Projec2 bitcoin14.5</title>
 </head>
 
-<body>
+<body onload="displayTableCoins()">
     <h1>Chriptonite</h1>
 
     <div class="mainClass">
@@ -39,36 +39,19 @@
                 <a href="/about.html" id="aboutLink" class="nav-link" data-section="aboutSection"
                     style="cursor: pointer;">About</a>
             </li>
-            <!-- <li><input type="text" id="filterInput" placeholder="Enter coin name...">
+            <li><input type="text" id="filterInput" placeholder="Enter coin name...">
                 <button onclick="filterByName()" class="btn btn-primary">Search</button>
-                <button onclick="showAll()" class="btn btn-secondary">Clear Search</button>
-            </li> -->
+                <!-- <button onclick="showAll()" class="btn btn-secondary">Clear Search</button> -->
 
-            <div class="container">
-                <div class="imageProfil">
-                    <img src="/asset/WhatsApp Image 2024-05-21 at 09.01.56_4982819b.jpg"
-                        style="width: 150px;height: 150px;"></IMg>
-                </div>
-            </div>
-            <div class="aboutProfil">
-                I like to study new things. Being knowledgeable about (your field) or any subject is an ongoing process,
-                and
-                I’m always proactive about seeking new opportunities to develop and grow in my role. Those opportunities
-                could be in the form of training, a conference, listening to a speaker, or taking on a new project, but
-                the
-                motivation is to increase my knowledge of the field.
-
-                Summary:
-
-                This answer is reserved for interviewing for a position where you may not have enough experience, but
-                you’re
-                willing to learn. Be sure to have examples ready that prove you’ve been proactive about your learning
-                experiences. Thus, knowing how to describe yourself in an interview without making yourself look
-                inadequate
-                is key.
-
-
-            </div>
+                <ul id="resultList"></ul>
+            </li>
+        </ul>
     </div>
+            
+
+            <div id="root"></div>    
+            
+            <footer id="resultList"> © Bitcoin Project 2024 By YG SKY PRODUCT license </footer>
+    
 
 </body>

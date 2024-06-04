@@ -25,9 +25,9 @@ $(() => {
         await handleMoreInfo(coinId);
     });
 
-    $("#homeLink").on("click", async () => await handleHome());
-    $("#reportsLink").on("click", () => { });
-    $("#aboutLink").on("click", () => { });
+    // $("#homeLink").on("click", async () => await handleHome());
+    // $("#reportsLink").on("click", () => { });
+    // $("#aboutLink").on("click", () => { });
 
     async function handleHome() {
         const coins = await getJson("https://api.coingecko.com/api/v3/coins/list");
@@ -96,53 +96,6 @@ $(() => {
 });
 
 
-// $(function() {
-//     var progressbar = $("#progressbar"),
-//       progressLabel = $(".progress-label");
-
-//     progressbar.progressbar({
-//       value: false,
-//       change: function() {
-//         progressLabel.text(progressbar.progressbar("value") + "%");
-//       },
-//       complete: function() {
-//         progressLabel.text("Complete!");
-//       }
-//     });
-
-//     // Function to fetch data from the API and update progress bar
-//     function fetchDataAndCache() {
-//       var val = 0;
-//       progressbar.progressbar("value", val); // Set progress bar to initial value
-//       progressLabel.text(val + "%");
-
-//       // Simulating API call progress
-//       var interval = setInterval(function() {
-//         val += 10; // Simulating progress increment
-//         progressbar.progressbar("value", val);
-//         progressLabel.text(val + "%");
-
-//         if (val >= 100) {
-//           clearInterval(interval);
-//           progressLabel.text("Complete!");
-//           // call coins API
-//           // fetch('api_endpoint')
-//           //   .then(response => response.json())
-//           //   .then(data => {
-//           //     // Process the fetched data
-//           //   })
-//           //   .catch(error => console.error('Error fetching data:', error));
-//         }
-//       }, 500); // Adjust the interval as needed
-//     }
-
-//     // Trigger the data fetching function
-//     fetchDataAndCache();
-//   });
-
-// favorite(){
-//     con
-// }
 
 
 function fetchDataAndCache() {
@@ -155,31 +108,83 @@ function fetchDataAndCache() {
         .catch(error => console.error('Error fetching data:', error));
 }
 
-// Function to display results
-// function displayResults(results) {
-//     const resultList = document.getElementById('resultList');
-//     resultList.innerHTML = '';
-//     results.forEach(item => {
-//         const li = document.createElement('li');
-//         li.textContent = `${item.id} - ${item.symbol} - ${item.name}`;
-//         resultList.appendChild(li);
-//     });
-// }
+//top 100
 
-// // Function to check sessionStorage for cached data
-// function checkCachedData() {
-//     const cachedData = sessionStorage.getItem('coinData');
 
-//     // If there's cached data, display it
-//     if (cachedData) {
-//         displayResults(JSON.parse(cachedData));
-//     } else {
-//         // If no cached data, fetch from API
-//         fetchDataAndCache();
-//     }
-// }
+const fetchTop100Prices = async () => {
+    try {
+        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=1');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
-// Check sessionStorage for cached data when the page loads
-// window.onload = function() {
-//     checkCachedData();
-// };
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with your fetch operation:', error);
+        throw error;
+    }
+};
+
+fetchTop100Prices()
+    .then(data => {
+        // console.log(data);
+        //store the data to sessionStorage
+        sessionStorage.setItem('Top100', JSON.stringify(data));
+        // console.log(data[0].name + " price is: $" + data[0].current_price);
+    })
+    .catch(error => {
+        console.error('Error during fetch operation:', error);
+    });
+
+
+function fetchFromSessionStorage() {
+    const top100 = JSON.parse(sessionStorage.getItem('Top100')); // Get data from session storage and parse it
+    return top100;
+}
+
+function fetchCOINFromLocalStorage(coinId) {
+    const top100 = JSON.parse(sessionStorage.getItem('Top100')); // Get data from session storage and parse it
+    const coin = top100.find(coin => coin.id === coinId);
+    return coin;
+}
+
+
+
+function displayTableCoins() {
+    // Get data from session storage and parse it
+    // const top100 = JSON.parse(sessionStorage.getItem('top100'));
+    const coinsData = fetchFromSessionStorage();
+    console.log(coinsData)
+
+
+    const table = document.createElement('table');// Create table element
+
+    // Create table header
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    ['Rank', 'Name', 'Symbol', 'icon', 'Price (USD)', 'Market Cap (USD)'].forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+
+    // Create table body
+    const tbody = table.createTBody();
+    coinsData.forEach((coin, index) => {
+        const row = tbody.insertRow();
+        row.insertCell().textContent = index + 1; // Rank
+        row.insertCell().textContent = coin.name; // Name
+        row.insertCell().textContent = coin.symbol.toUpperCase(); // Symbol
+        row.insertCell().innerHTML = '<img src="' + coin.image + '" class="icon">'; // Image
+        row.insertCell().textContent = '$' + coin.current_price.toFixed(2); // Price 
+        row.insertCell().textContent = '$' + Number(coin.market_cap).toLocaleString('en', { maximumFractionDigits: 0 }); // Market Cap
+    });
+
+    // clear div "content" to make room for the table
+    const contentDiv = document.getElementById("root");
+    contentDiv.innerHTML = '';
+    contentDiv.appendChild(table);// append table to body
+}
+
+//fin top 100 cela fonctionne
